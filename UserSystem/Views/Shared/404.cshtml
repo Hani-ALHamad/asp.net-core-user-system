@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Page not found";
+}
+@using Microsoft.AspNetCore.Http;
+
+<div class="text-center">
+    <h1>404 - Page not found</h1>
+    <div id="page"></div>
+
+    <div class="margin-1">
+        <a  href="../../../Home/Index" 
+            class="gitLink" 
+            style="text-decoration:underline;">
+            Go back to main page
+        </a>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @*to get the current path in URL*@
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function(){
+            const node = document.createElement("li");
+            const textnode = document.createTextNode('The page "' + window.location.pathname + '" cannot be found.');
+            node.appendChild(textnode);
+            document.getElementById("page").appendChild(node);
+        });
+    </script>
+}

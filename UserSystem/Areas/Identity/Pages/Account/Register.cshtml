@@ -1,0 +1,53 @@
+﻿@page
+@model RegisterModel
+
+@{
+    ViewData["Title"] = "Sign up";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    Response.Redirect("../../Home/Index");
+}
+
+<div  class="text-center mainContainer ">
+    <h1 class="navLogo" style="font-size:4rem;">User System</h1>
+    <br />
+    <br />
+    <br />
+    <h2>Sign up a new user</h2>
+    <br />
+    <form class="form-group signForm" id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <div class="textForm">
+
+            <label asp-for="Input.UserName"></label>
+            <span asp-validation-for="Input.UserName" class="text-danger"></span>
+            <input asp-for="Input.UserName" class="form-control" autocomplete="off" aria-required="true" />
+
+            <br />
+            
+            <label asp-for="Input.Password"></label>
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+
+            <br />
+
+            <label asp-for="Input.ConfirmPassword"></label>
+            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+            
+        </div>
+        <br />
+        <button id="registerSubmit" type="submit" class="btn btn-outline-info">Create</button>
+        @*validation*@
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </form>
+    <br />
+    <p>Already got an account? 
+        <a  asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" 
+            class="gitLink" 
+            style="text-decoration:underline;">
+            Sign in here
+        </a>
+    </p>
+</div>

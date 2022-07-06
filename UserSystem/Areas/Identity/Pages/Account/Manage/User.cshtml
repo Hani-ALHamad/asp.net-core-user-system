@@ -1,0 +1,29 @@
+﻿@page
+@model EmailModel
+@{
+    ViewData["Title"] = "Change Username";
+    ViewData["ActivePage"] = ManageNavPages.User;
+}
+
+<h3>@ViewData["Title"]</h3>
+<partial name="_StatusMessage" for="StatusMessage"/>
+<div class="text-center margin-2-all">
+    <div class="row col-sm-5">
+        <form id="email-form" class="form-group" method="post">
+            <div class="textForm">
+                <label asp-for="UserName" class="">Username</label>
+                <input asp-for="UserName" class="form-control" disabled style="color:gray"/>
+            <br />
+                <label asp-for="Input.NewUserName" class=""></label>
+                <input asp-for="Input.NewUserName" class="form-control" autocomplete="off" aria-required="true" />
+                <span asp-validation-for="Input.NewUserName" class="text-danger"></span>
+            <br />
+            </div>
+            <button id="change-email-button" type="submit" asp-page-handler="ChangeEmail" class="btn btn-outline-info">Change Username</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,78 @@
+﻿@*manage user layout*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - User System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/UserSystem.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="customNavbar navbar navbar-dark border-bottom box-shadow  mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand navLogo" asp-area="" asp-controller="Home" asp-action="Index">User System</a>
+                <div class="justify-content-between">
+                    <ul class="navbar-nav flex-row">
+                        @if (ViewContext?.ActionDescriptor?.RouteValues["area"] != "Identity")
+                        {
+                            <li class="nav-link align-self-lg-center" style="margin-right:1rem">
+                                <img src="~/img/no-avatar.png" alt="Avatar" class="img-thumbnail" style="width:44px"/>
+                            </li>
+                            <li class="nav-link">
+                                <a class="nav-link gitLink" asp-area="Identity" asp-page="/Account/Manage/Index" style="margin-right:1rem">Account Settings</a>
+                            </li>
+                        } else
+                        {
+                            <li class="nav-link">
+                                <a class="nav-link gitLink" asp-area="" asp-controller="Home" asp-action="Index" style="margin-right:1rem">Go back to home page ➜</a>
+                            </li>
+                        }
+                        <li class="nav-link">
+                            <form id="logoutForm" class="" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button id="logout" type="submit" class="nav-link gitLink" style="background:none; border:none;">Log Out</button>
+                            </form>         
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <h1>Account Settings</h1>
+
+<div>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            <partial name="_ManageNav" />
+        </div>
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+        </main>
+    </div>
+
+    <footer class="footer customFooter text-muted">
+        <div class="container text-center">
+            <a 
+                class="gitLink" 
+                href="https://github.com/Hani-ALHamad" 
+                target="_blank" 
+                style="font-weight:100; font-size:0.9rem"
+            >
+                My GitHub
+            </a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

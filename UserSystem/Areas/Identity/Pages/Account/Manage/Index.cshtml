@@ -1,0 +1,78 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<div  class="text-center margin-2-all">
+            <div class="col-sm-5">
+            @{
+              if(@ViewData["AvatarData"] != null){
+                <img src="@ViewData["AvatarData"]" alt="@ViewData["Avatar"]" class="img-thumbnail" style="width:175px"/>
+              } 
+              else {
+                <img src="~/img/no-avatar.png" alt="Avatar" class="img-thumbnail" style="width:175px"/>
+              }
+            }
+
+            <h2 class="margin-1">@ViewData["userName"]</h2>
+            <p class="margin-1" style="font-weight:100; font-size:0.8rem; color:lightgray">JPG | JPEG | PNG | GIF</p>
+            <p style="font-weight:100; font-size:0.8rem; color:lightgray; margin-top:-1rem">Maximim size: 1 MB</p>
+            <form 
+                class="imgForm" 
+                id="profile-form" 
+                asp-area="" 
+                asp-controller="Profile" 
+                asp-action="Upload" 
+                enctype="multipart/form-data" 
+                method="post"
+            >
+                <input 
+                    asp-for="Input.Avatar" 
+                    type="file" 
+                    class="imgInput btn-outline-info btn" 
+                    accept="image/jpg, image/gif, image/jpeg, image/png"
+                />
+                <input asp-for="Input.Avatar" type="submit" class="btn btn-success margin-1" value="Upload and save"/>
+                <span asp-validation-for="Input.Avatar" class="text-danger"></span>
+                <span id="page" class="text-danger"></span>
+            </form>
+            
+              @if(@ViewData["AvatarData"] != null){
+                  <form asp-area="" asp-controller="Profile" id="avatarRemoveForm" asp-action="Remove" method="post">
+                    <input type="button" onclick="submitFunction()" class="btn btn-outline-danger margin-1" value="Remove avatar"/>
+                  </form>
+              } 
+        </div>
+</div>
+
+@section Scripts {
+    @*confirmation message for removing avatar*@
+    <script type="text/javascript" language="javascript">
+        function submitFunction() {
+            if(confirm("confirm deleting your avatar?")){
+                document.getElementById("avatarRemoveForm").submit();
+            }
+        }
+    </script>
+
+    @* validation messages in case the file you tried to upload wasn't an image or was bigger than 1 mb*@
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function(){
+            document.getElementById("page").value = "Hello World";
+            const node = document.createElement("li");
+
+            const location = decodeURIComponent(window.location.href.split("#?errorMessage=")[1]);
+            const allowedMessage = ["Please choose a valid image type.", "Maximum allowed image size is 1MB."];
+            if(allowedMessage.includes(location)){
+                const textnode = document.createTextNode(location);
+                node.appendChild(textnode);
+                document.getElementById("page").appendChild(node);
+            }
+        });
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}
