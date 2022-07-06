@@ -21,18 +21,35 @@ I wanted this project to be as exact the same as my previous UserSystem project,
 **I made multiple changes to the Identity as well, like switching everything from using Email into using Username, i have disabled many things in the Identity too.*
 
 ---
+Sign Up page:   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/register.jpg)
 
-[!alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/register.jpg)
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
-[!alt text]()
+Log in page:   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/login.jpg)
+
+Home page:   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/home.jpg)
+
+Adding avatar:   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/profile1.jpg)
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/profile2.jpg)
+
+Changing Username:   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/username.jpg)
+
+Changing Password:   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/password.jpg)
+
+Download your data/ delete your account:   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/data.jpg)
+
+the database:   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/db.jpg)
+
+AspNetUsers (Identity table):   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/userstabledesign.jpg)
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/userstabledata.jpg)
+
+UserAvatar table:   
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/avatarstabledesign.jpg)
+![alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/avatarstabledata.jpg)
