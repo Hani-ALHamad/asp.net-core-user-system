@@ -20,3 +20,19 @@ I wanted this project to be as exact the same as my previous UserSystem project,
 
 **I made multiple changes to the Identity as well, like switching everything from using Email into using Username, i have disabled many things in the Identity too.*
 
+---
+
+[!alt text](https://raw.githubusercontent.com/Hani-ALHamad/asp.net-core-user-system/master/images/register.jpg)
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
+[!alt text]()
