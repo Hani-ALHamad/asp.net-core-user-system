@@ -1,6 +1,5 @@
 # Basic User System (ASP.NET Core MVC)
 
-# • Link: https://hani-asp-net.herokuapp.com/
 
 My first ASP.NET Core project, its a user system app with some features, using the same idea as my one of my previous projects: [User System](https://github.com/Hani-ALHamad/react-node-user-system).  
 I wanted this project to be as exact the same as my previous UserSystem project, but since [ASP.NET Core's Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-6.0&tabs=visual-studio) does offer many functionalities, i have decided to keep some of them in this app.
