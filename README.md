@@ -21,10 +21,10 @@ I wanted this project to be as exact the same as my previous UserSystem project,
 
 
 
-***About hosting:***    
-**I am using a free MS SQL database hosting [FreeASPHosting.net](https://freeasphosting.net/) which means the database might be slow or down sometimes.*
+~~***About hosting:***    
+**I am using a free MS SQL database hosting [FreeASPHosting.net](https://freeasphosting.net/) which means the database might be slow or down sometimes.*~~
 
-**I used [Heroku](https://www.heroku.com/) to host my website, Heroku does not support ASP.NET Core officially and i had to use a [workaround](https://github.com/jincod/dotnetcore-buildpack) in order to deploy my app there, i couldn't access the Heroku Config Vars in order to add connection string variable from inside my app, thats why the website is deployed using a hidden GitHub repository, it is the exact same as this one but with connection strings being added there.*
+~~**I used [Heroku](https://www.heroku.com/) to host my website, Heroku does not support ASP.NET Core officially and i had to use a [workaround](https://github.com/jincod/dotnetcore-buildpack) in order to deploy my app there, i couldn't access the Heroku Config Vars in order to add connection string variable from inside my app, thats why the website is deployed using a hidden GitHub repository, it is the exact same as this one but with connection strings being added there.*~~
 
 ---
 Sign Up page:   
